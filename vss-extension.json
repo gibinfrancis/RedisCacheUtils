@@ -53,22 +53,22 @@
   },
   "links": {
     "getstarted": {
-      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/blob/master/overview.md"
+      "uri": "https://github.com/gibinfrancis/RedisCacheUtils/blob/main/README.md"
     },
     "issues": {
-      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/issues"
+      "uri": "https://github.com/gibinfrancis/RedisCacheUtils/issues"
     },
     "repository": {
-      "uri": "https://github.com/gibinfrancis/RedisCacheExtension"
+      "uri": "https://github.com/gibinfrancis/RedisCacheUtils"
     },
     "support": {
-      "uri": "https://github.com/gibinfrancis/RedisCacheExtension"
+      "uri": "https://github.com/gibinfrancis/RedisCacheUtils"
     },
     "privacypolicy": {
-      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/blob/master/PRIVACY.md"
+      "uri": "https://github.com/gibinfrancis/RedisCacheUtils/blob/master/PRIVACY.md"
     },
     "license": {
-      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/blob/master/LICENSE"
+      "uri": "https://github.com/gibinfrancis/RedisCacheUtils/blob/master/LICENSE"
     }
   },
   "tags": ["utility", "tasks"],
