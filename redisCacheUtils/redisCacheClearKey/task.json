@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "98e620c4-e2ad-47cd-bda0-41b028296cbb",
+  "name": "redisCacheClearKey",
+  "friendlyName": "Redis Cache Clear Key",
+  "description": "Clear specific key in the redis server",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Gibin Francis",
+  "version": {
+    "Major": 2,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "instanceNameFormat": "Redis Cache Clear Key",
+  "inputs": [
+    {
+      "name": "redisPwdType",
+      "type": "radio",
+      "label": "Authentication Method",
+      "required": true,
+      "defaultValue": "sas",
+      "helpMarkDown": "Use 'SAS Authentication key' for azure redis cache, use 'Credentials within URL' for others, use advanced to pass the client options as json",
+      "options": {
+        "sas": "SAS Authentication key",
+        "url": "Credentials within URL",
+        "adv": "Advanced"
+      }
+    },
+    {
+      "name": "redisHost",
+      "type": "string",
+      "label": "Redis Host",
+      "defaultValue": "",
+      "required": false,
+      "visibleRule": "redisPwdType = sas || redisPwdType = url",
+      "helpMarkDown": "Redis host name or url"
+    },
+    {
+      "name": "redisAuthKey",
+      "type": "string",
+      "label": "Redis authentication key",
+      "defaultValue": "",
+      "required": false,
+      "visibleRule": "redisPwdType = sas",
+      "helpMarkDown": "Redis Authentication Key"
+    },
+    {
+      "name": "redisClientOption",
+      "type": "string",
+      "label": "Redis client Options",
+      "defaultValue": "",
+      "required": false,
+      "visibleRule": "redisPwdType = adv",
+      "helpMarkDown": "Redis Client options : minified json string of client options"
+    },
+    {
+      "name": "redisCacheKey",
+      "type": "string",
+      "label": "Redis Cache key",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Cache key to add to the server"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "index.js"
+    }
+  }
+}

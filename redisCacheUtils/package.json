@@ -1,0 +1,22 @@
+{
+  "name": "rediscacheclear",
+  "version": "1.0.0",
+  "description": "Clear redis cache",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gibin Francis",
+  "license": "ISC",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^4.2.0",
+    "bluebird": "^3.7.0",
+    "redis": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^16.18.14",
+    "@types/q": "^1.5.5",
+    "sync-request": "^6.1.0"
+  }
+}

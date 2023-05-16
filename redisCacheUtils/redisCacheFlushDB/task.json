@@ -1,0 +1,63 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "2adf5d8e-029c-4ee6-8dbc-0a895ec2ce05",
+  "name": "redisCacheFlushDB",
+  "friendlyName": "Redis Cache Flush DB",
+  "description": "Runs Flush DB command in the redis server on the specific DB",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Gibin Francis",
+  "version": {
+    "Major": 2,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "instanceNameFormat": "Redis Cache Flush DB",
+  "inputs": [
+    {
+      "name": "redisPwdType",
+      "type": "radio",
+      "label": "Authentication Method",
+      "required": true,
+      "defaultValue": "sas",
+      "helpMarkDown": "Use 'SAS Authentication key' for azure redis cache, use 'Credentials within URL' for others, use advanced to pass the client options as json",
+      "options": {
+        "sas": "SAS Authentication key",
+        "url": "Credentials within URL",
+        "adv": "Advanced"
+      }
+    },
+    {
+      "name": "redisHost",
+      "type": "string",
+      "label": "Redis Host",
+      "defaultValue": "",
+      "required": false,
+      "visibleRule": "redisPwdType = sas || redisPwdType = url",
+      "helpMarkDown": "Redis host name or url"
+    },
+    {
+      "name": "redisAuthKey",
+      "type": "string",
+      "label": "Redis authentication key",
+      "defaultValue": "",
+      "required": false,
+      "visibleRule": "redisPwdType = sas",
+      "helpMarkDown": "Redis Authentication Key"
+    },
+    {
+      "name": "redisClientOption",
+      "type": "string",
+      "label": "Redis client Options",
+      "defaultValue": "",
+      "required": false,
+      "visibleRule": "redisPwdType = adv",
+      "helpMarkDown": "Redis Client options : minified json string of client options"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "index.js"
+    }
+  }
+}

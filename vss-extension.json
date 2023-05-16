@@ -1,0 +1,109 @@
+{
+  "manifestVersion": 1,
+  "id": "redis-cache-clear",
+  "name": "Redis Cache Utils",
+  "version": "2.0.12",
+  "publisher": "gbnz",
+  "description": "Extension to Add/Delete/Flush Redis cache",
+  "public": true,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": ["Azure Pipelines"],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "files": [
+    {
+      "path": "redisCacheUtils/redisCacheAddKey"
+    },
+    {
+      "path": "redisCacheUtils/redisCacheClearKey"
+    },
+    {
+      "path": "redisCacheUtils/redisCacheFlushAll"
+    },
+    {
+      "path": "redisCacheUtils/node_modules/azure-pipelines-task-lib"
+    },
+    {
+      "path": "redisCacheUtils/node_modules/redis"
+    },
+    {
+      "path": "redisCacheUtils/node_modules/bluebird"
+    },
+    {
+      "path": "images",
+      "addressable": true
+    },
+    {
+      "path": "redisCacheUtils",
+      "addressable": true
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "overview.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/blob/master/overview.md"
+    },
+    "issues": {
+      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/issues"
+    },
+    "repository": {
+      "uri": "https://github.com/gibinfrancis/RedisCacheExtension"
+    },
+    "support": {
+      "uri": "https://github.com/gibinfrancis/RedisCacheExtension"
+    },
+    "privacypolicy": {
+      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/blob/master/PRIVACY.md"
+    },
+    "license": {
+      "uri": "https://github.com/gibinfrancis/RedisCacheExtension/blob/master/LICENSE"
+    }
+  },
+  "tags": ["utility", "tasks"],
+  "contributions": [
+    {
+      "id": "redisCacheAddKey-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "redisCacheUtils/redisCacheAddKey"
+      }
+    },
+    {
+      "id": "redisCacheClearKey-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "redisCacheUtils/redisCacheClearKey"
+      }
+    },
+    {
+      "id": "redisCacheFlushAll-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "redisCacheUtils/redisCacheFlushAll"
+      }
+    },
+    {
+      "id": "redisCacheFlushDB-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "redisCacheUtils/redisCacheFlushDB"
+      }
+    }
+  ]
+}
